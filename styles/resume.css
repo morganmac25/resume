@@ -1,0 +1,166 @@
+/* Limit content width and center */
+* {
+  max-width: 700px;
+  margin: auto;
+  box-sizing: border-box;
+}
+
+/* Set 1-inch margins using @page rule (for PDF/print) */
+@page {
+  margin: 1in;
+}
+
+body {
+  margin: 0;
+  font-family: 'Merriweather', serif;
+  background: white;
+}
+
+/* Simple page wrapper for all content */
+.page {
+  padding: 0;
+  background: white;
+}
+
+/* Header and footer styles */
+#header,
+#footer {
+  height: auto;
+  padding: 1rem;
+  background-color: #ffffff;
+  text-align: center;
+  position: static; /* was fixed */
+  width: 100%;
+  margin-bottom: -1.25rem;
+  font-family: 'Merriweather', serif;
+}
+
+.dark-mode #header,
+.dark-mode #footer,
+.dark-mode .page,
+.dark-mode {
+  background: #1a1a1c;
+  color: #e3e3e9;
+}
+
+.dark-mode a {
+  color: rgb(135, 179, 224);
+}
+
+/* Title area */
+#title {
+  margin-left: 1;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Remove sidebars for printing */
+.left,
+.right {
+  display: none;
+  margin: 1rem;
+}
+
+/* Main content area */
+.stuff {
+  width: 100%;
+  margin: auto;
+  display: block;
+  height: auto;
+}
+
+/* Typography */
+p,
+li {
+  font-family: 'Merriweather', serif;
+  font-size: 16px;
+  line-height: 1;
+  margin: .25rem;
+}
+
+.filler {
+  font-family: 'Merriweather', serif;
+  font-size: 16px;
+  line-height: 1;
+  margin: .25rem;
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Merriweather', serif;
+  font-size: 50px;
+  font-weight: bold;
+  margin: auto;
+}
+
+h2 {
+  font-family: 'Merriweather', serif;
+  font-size: 15.1px;
+  font-weight: bold;
+  margin: auto;
+}
+
+hr {
+  line-height: normal;
+  margin-top: .5rem;
+  margin-bottom: 0rem;
+}
+
+.head {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  margin-bottom: .25rem;
+}
+
+.sub-head {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  font-weight: 600;
+  width: 100%;
+}
+
+.right-text {
+  font-weight: 400; /* optional styling */
+  text-align: right;
+  font-size: 16px;
+  margin-right: 1.25rem;
+}
+
+/* Links in print */
+a {
+  color: black;
+  text-decoration: underline;
+}
+
+/* Print media query */
+@media print {
+  body {
+    background: white;
+  }
+
+  a::after {
+    content: none;
+  }
+
+  #footer {
+    display: none;
+  }
+
+  button {
+    display: none;
+  }
+
+  .dark-mode .page,
+  .dark-mode #header {
+    background-color: rgb(255, 255, 255) !important;
+    color: rgb(0, 0, 0) !important;
+  }
+
+  body.dark-mode .page a {
+    color: black !important;
+    text-decoration: underline;
+  }
+  
+}
