@@ -182,7 +182,14 @@ a {
 /* Print media query */
 @media print {
   body {
-    background: white;
+    font-size: 12pt; 
+    width: 100%; 
+    margin: 0; 
+    float: none !important;
+  }
+
+  @page {
+    margin: 2cm; 
   }
 
   a::after {
